@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!link rel="stylesheet" href="style.css">
+    <style>
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+
+body { background: #0d0d0d; font-family: Georgia, serif; color: #e8e0cc; font-size: 17px; line-height: 1.7; }
+
+nav { display: flex; align-items: center; justify-content: space-between; padding: 1.4rem 2.5rem; border-bottom: 1px solid #c9a84c44; background: #0d0d0d; position: sticky; top: 0; z-index: 100; }
+.nav-logo span { font-size: 1.25rem; letter-spacing: .3em; color: #c9a84c; }
+.nav-links { list-style: none; display: flex; gap: 2rem; }
+.nav-links a { text-decoration: none; color: #a89060; font-size: .85rem; letter-spacing: .18em; font-family: 'Segoe UI', sans-serif; transition: color .2s; }
+.nav-links a:hover { color: #e8c96a; }
+
+#booking { padding: 5rem 2.5rem; max-width: 1100px; margin: 0 auto; }
+
+.booking-layout { display: grid; grid-template-columns: 1fr 1.4fr; gap: 4rem; align-items: start; }
+@media (max-width: 768px) { .booking-layout { grid-template-columns: 1fr; } }
+
+.section-tag { font-size: 1rem; letter-spacing: .3em; color: #c9a84c; text-transform: uppercase; font-family: 'Segoe UI', sans-serif; margin-bottom: .4rem; }
+.section-title { font-size: 3rem; font-weight: 400; color: #f0e6c8; line-height: 1.2; margin-bottom: 1rem; }
+.section-title em { color: #c9a84c; font-style: italic; }
+.divider { width: 48px; height: 1px; background: #c9a84c; margin: 1.2rem 0; }
+
+.booking-info p { font-size: .95rem; color: #8a7550; font-family: 'Segoe UI', sans-serif; margin-bottom: 2rem; }
+
+.booking-feature { display: flex; gap: 1rem; margin-bottom: 1.4rem; }
+.feature-dot { width: 8px; height: 8px; border-radius: 50%; background: #c9a84c; flex-shrink: 0; margin-top: .55rem; }
+.feature-text { font-size: .98rem; color: #8a7550; font-family: 'Segoe UI', sans-serif; line-height: 1.6; }
+.feature-text strong { display: block; color: #f0e6c8; font-weight: 400; margin-bottom: .2rem; }
+
+.booking-form { background: #161410; border: 1px solid #c9a84c44; border-radius: 8px; padding: 2.5rem; }
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+.field { display: flex; flex-direction: column; gap: .4rem; margin-bottom: 1.2rem; }
+.field label { font-size: .75rem; letter-spacing: .15em; color: #a07c30; font-family: 'Segoe UI', sans-serif; text-transform: uppercase; }
+
+input, select, textarea {
+  background: #0d0d0d; border: 1px solid #c9a84c33; border-radius: 4px;
+  color: #e8e0cc; font-family: 'Segoe UI', sans-serif; font-size: .99rem;
+  padding: .7rem 1rem; transition: border-color .2s; outline: none; width: 100%;
+}
+input:focus, select:focus, textarea:focus { border-color: #c9a84c; }
+input::placeholder, textarea::placeholder { color: #4a4030; }
+textarea { min-height: 110px; resize: vertical; }
+select option { background: #161410; }
+
+.guest-counter { display: flex; align-items: center; gap: 1.2rem; }
+.guest-btn { background: #1e1a10; border: 1px solid #c9a84c44; color: #c9a84c; width: 34px; height: 34px; border-radius: 4px; font-size: 1.1rem; cursor: pointer; transition: background .2s; }
+.guest-btn:hover { background: #c9a84c22; }
+#guest-count { font-size: 1.1rem; color: #f0e6c8; min-width: 30px; text-align: center; }
+
+.services-select { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; }
+.service-check { display: flex; align-items: center; gap: .5rem; font-size: .99rem; color: #a89060; font-family: 'Segoe UI', sans-serif; cursor: pointer; }
+.service-check input { width: auto; accent-color: #c9a84c; }
+
+.form-submit { width: 100%; padding: .95rem; background: #c9a84c; color: #0d0d0d; border: none; border-radius: 4px; font-size: .85rem; letter-spacing: .2em; font-family: 'Segoe UI', sans-serif; cursor: pointer; transition: background .25s; margin-top: .5rem; }
+.form-submit:hover { background: #e8c96a; }
+
+.form-success { display: none; text-align: center; padding: 3rem 1rem; }
+.success-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+.success-title { font-size: 1.8rem; color: #c9a84c; margin-bottom: .5rem; }
+.success-sub { font-size: .98rem; color: #8a7550; font-family: 'Segoe UI', sans-serif; }
+      
+
+
+
+
+    </style>
+</head>
+<body>
+  <nav>
+  <a href="#" class="nav-logo"><Booking</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">SERVICES</a></li>
+    <li><a href="Showcase.html">PROTOFOLIO</a></li>
+    <li><a href="dashboard.html">DASHBOARD</a></li>
+    <li><a href="bookings.html">BOOK</a></li>
+        <li> <a href="contact.html">CONTACT</a></li>
+    </a>
+  </li>
+  </ul>
+  </nav>
+    <!-- BOOKING FORM -->
+<section id="booking">
+  <div class="booking-layout">
+    <div class="booking-info reveal">
+      <p class="section-tag">Book With Us</p>
+      <h2 class="section-title">Let's plan your<br><em>perfect event.</em></h2>
+      <div class="divider"></div>
+      <p>Tell us about your vision and we'll connect you with our team within 24 hours. Every great event begins with a conversation.</p>
+      <div class="booking-features">
+        <div class="booking-feature">
+          <div class="feature-dot"></div>
+          <div class="feature-text"><strong>Free Initial Consultation</strong>A 60-minute discovery session with your dedicated planner, completely complimentary.</div>
+        </div>
+        <div class="booking-feature">
+          <div class="feature-dot"></div>
+          <div class="feature-text"><strong>Custom Proposals Within 48hrs</strong>Receive a detailed plan, moodboard, and transparent pricing tailored to your event.</div>
+        </div>
+        <div class="booking-feature">
+          <div class="feature-dot"></div>
+          <div class="feature-text"><strong>Dedicated Event Manager</strong>One point of contact from planning through to the final guest's departure.</div>
+        </div>
+      </div>
+    </div>
+    <div class="booking-form reveal">
+      <form id="event-form" onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="field"><label>First Name</label><input type="text" placeholder="doxa" required></div>
+          <div class="field"><label>Last Name</label><input type="text" placeholder="Events" required></div>
+        </div>
+        <div class="form-row">
+          <div class="field"><label>Email Address</label><input type="email" placeholder="doxaevents@example.com" required></div>
+          <div class="field"><label>Phone Number</label><input type="tel" placeholder="+256 789128761"></div>
+        </div>
+        <div class="field">
+          <label>Event Type</label>
+          <select required>
+            <option value="" disabled selected>Select event type</option>
+            <option>Wedding & Ceremony</option>
+            <option>Corporate Gala</option>
+            <option>Private Celebration</option>
+            <option>Festival / Exhibition</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <div class="field"><label>Preferred Date</label><input type="date" required></div>
+          <div class="field"><label>Event Venue / Location</label><input type="text" placeholder="Kampala, Uganda"></div>
+        </div>
+        <div class="field">
+          <label>Number of Guests</label>
+          <div class="guest-counter">
+            <button type="button" class="guest-btn" onclick="adjustGuests(-10)">−</button>
+            <span id="guest-count">50</span>
+            <button type="button" class="guest-btn" onclick="adjustGuests(10)">+</button>
+          </div>
+        </div>
+        <div class="field">
+          <label>Services Required</label>
+          <div class="services-select">
+            <label class="service-check"><input type="checkbox" checked><span>Full Event Planning</span></label>
+            <label class="service-check"><input type="checkbox"><span>Catering & Bar</span></label>
+            <label class="service-check"><input type="checkbox" checked><span>Décor & Florals</span></label>
+            <label class="service-check"><input type="checkbox"><span>Photography</span></label>
+            <label class="service-check"><input type="checkbox"><span>Entertainment</span></label>
+            <label class="service-check"><input type="checkbox"><span>Transport</span></label>
+          </div>
+        </div>
+        <div class="field">
+          <label>Approximate Budget</label>
+          <select>
+            <option value="" disabled selected>Select budget range</option>
+            <option>Under $5,000</option>
+            <option>$5,000 – $15,000</option>
+            <option>$15,000 – $50,000</option>
+            <option>$50,000 – $150,000</option>
+            <option>$150,000+</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Tell Us Your Vision</label>
+          <textarea placeholder="Share the story you want your event to tell…"></textarea>
+        </div>
+        <button type="submit" class="form-submit">Send My Event Brief</button>
+      </form>
+      <div class="form-success" id="form-success">
+        <div class="success-icon">✨</div>
+        <div class="success-title">Brief Received!</div>
+        <p class="success-sub">Thank you. Your dedicated planner will reach out within 24 hours.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+    
+</body>
+</html>

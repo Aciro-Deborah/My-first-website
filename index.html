@@ -3,335 +3,434 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PROFILE</title>
-    <link rel="stylesheet" href="profile.css">
+    <title>DOXA SOLUTION</title>
     <style>
-        /*---Basic reset---*/
-        *,before*, after*{margin: 0.2rem;padding: 0;box-sizing:border
-        }
-:root {
-    --gold: #C9A84C;
-    --gold-light: #E8D49A;
-    --gold-dark: #9A7830;
-    --cream: #FAF7F2;
-    --dark: #1A1713;
-    --dark-2: #2D2920;
-    --dark-3: #3F3A30;
-    --muted: #9A9080;
-    --white: #FFFFFF;
-    --serif: 'Cormorant Garamond', Georgia, serif;
-    --sans: 'DM Sans', system-ui, sans-serif;
-    --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  html { scroll-behavior: smooth; }
-        /*---Page turnover---*/
-        body{
-    background-color: lightgray;input{
-        background: whitesmoke
-    
-    }
-    
-        
- }
- /*put*/
-input
-h1,
-    h1{font-display: swap;color:cadetblue ;}
-   P{ font-variant:"var"(--#1111) ;font-style: initial;align-content: normal; }
-
-
-
-/*table*/
-   table 
-tr,
-    th,td{
-        color: darkgoldenrod;
-         background: #1a2d1a;
-   }
-    ol,li{
-        font-variant:"var"(--#1111) ;
-        font-style: oblique;
-    }
-    
-       
-
-
-            
-
-            
-            /*nav*/
-                
-
-         nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 1.4rem 4rem;
-    background: whitesmoke;
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(201,168,76,0.15);
-    transition: padding var(--transition);
-  }
-  .nav-logo {
-    font-family: var(--serif);
-    font-size: 1.6rem;
-    font-weight: 300;
-    letter-spacing: 0.08em;
-    color: var(--gold);
-    text-decoration: none;
-  }
-  .nav-logo span { font-style: italic; }
-  .nav-links { display: flex; gap: 2.4rem; list-style: none; }
-  .nav-links a {
-    font-size: 0.78rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--cream);
-    text-decoration: none;
-    opacity: 0.75;
-    transition: opacity var(--transition);
-  }
-  .nav-links a:hover { opacity: 1; color: var(--gold); }
-  .nav-cta {
-    font-size: 0.75rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    padding: 0.6rem 1.6rem;
-    border: 1px solid var(--gold);
-    color: var(--gold);
-    background: transparent;
-    cursor: pointer;
-    text-decoration: none;
-    transition: all var(--transition);
-  }
-  .nav-cta:hover { background: var(--gold); color: var(--dark); }
-
-            
-            /*message*/
-
-.Message{
-    width: 400px;
-    height: 200px;
-}
-.email{
-    width: 300px;
-}
-.name{
-    width: 300px;
-}
-.submit-button{
-    width:100px;
-    
-}
-
-            
-
      
-       
+    /* ── Base ── */
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
-         
-        </style>
+body {
+  background: #0d0d0d;
+  font-family: Georgia, serif;
+  color: #e8e0cc;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+/* ── Nav ── */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.4rem 2.5rem;
+  border-bottom: 1px solid #c9a84c44;
+  background: #0d0d0d;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-logo span { font-size: 1.25rem; letter-spacing: .3em; color: #c9a84c; }
+
+.nav-links { list-style: none; display: flex; gap: 2rem; }
+
+.nav-links a, .nav-cta {
+  text-decoration: none;
+  color: #a89060;
+  font-size: 0.85rem;
+  letter-spacing: .18em;
+  font-family: 'Segoe UI', sans-serif;
+  transition: color .2s;
+}
+
+.nav-links a:hover { color: #e8c96a; }
+
+.nav-cta {
+  padding: .55rem 1.4rem;
+  border: 1px solid #c9a84c;
+  color: #c9a84c;
+}
+
+.nav-cta:hover { background: #c9a84c; color: #0d0d0d; }
+
+/* ── Hero ── */
+#hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 6rem 2.5rem 4rem;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 60% 40%, #1c1608, #0d0d0d 70%);
+  z-index: 0;
+}
+
+.hero-grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(201,168,76,.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,168,76,.05) 1px, transparent 1px);
+  background-size: 60px 60px;
+  z-index: 0;
+}
+
+.hero-eyebrow {
+  position: relative; z-index: 1;
+  font-size: .85rem; letter-spacing: .35em;
+  color: #c9a84c; text-transform: uppercase;
+  font-family: 'Segoe UI', sans-serif;
+  margin-bottom: 1.2rem;
+}
+
+.hero-title {
+  position: relative; z-index: 1;
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-weight: 400; color: #f0e6c8;
+  line-height: 1.15; margin-bottom: 1.5rem;
+}
+
+.hero-title em { display: block; color: #c9a84c; font-style: italic; }
+
+.hero-sub {
+  position: relative; z-index: 1;
+  font-size: 1.15rem; color: #b0a080;
+  max-width: 560px; margin-bottom: 2.5rem;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.hero-action {
+  position: relative; z-index: 1;
+  display: flex; gap: 1.2rem;
+  flex-wrap: wrap; margin-bottom: 3rem;
+}
+
+/* ── Buttons ── */
+.btn-primary, .btn-outline {
+  display: inline-block;
+  padding: .8rem 2rem;
+  font-size: .85rem; letter-spacing: .18em;
+  font-family: 'Segoe UI', sans-serif;
+  text-decoration: none;
+  transition: background .25s, color .25s;
+}
+
+.btn-primary { background: #c9a84c; color: #0d0d0d; }
+.btn-primary:hover { background: #e8c96a; }
+
+.btn-outline { border: 1px solid #c9a84c; color: #c9a84c; }
+.btn-outline:hover { background: #c9a84c; color: #0d0d0d; }
+
+
+/* ── Services ── */
+#services { padding: 5rem 2.5rem; max-width: 1100px; margin: 0 auto; }
+
+.services-header { margin-bottom: 3rem; }
+
+.section-tag {
+  font-size: .78rem; letter-spacing: .3em;
+  color: #c9a84c; text-transform: uppercase;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.section-title { font-size: 2.8rem; font-weight: 400; color: #f0e6c8; }
+.section-title em { color: #c9a84c; font-style: italic; }
+
+.divider { width: 48px; height: 1px; background: #c9a84c; margin: 1.2rem 0; }
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.service-card {
+  border: 1px solid #c9a84c44;
+  border-radius: 6px; padding: 1.8rem 1.5rem;
+  background: #161410; cursor: pointer;
+  transition: border-color .25s, transform .2s;
+}
+
+.service-card:hover { border-color: #c9a84c; transform: translateY(-4px); }
+
+.service-icon { display: block; width: 36px; height: 2px; background: #c9a84c; margin-bottom: 1.2rem; }
+
+.service-name { font-size: 1.2rem; color: #f0e6c8; font-weight: 400; margin-bottom: .75rem; }
+
+.service-desc { font-size: .95rem; color: #8a7550; font-family: 'Segoe UI', sans-serif; line-height: 1.75; margin-bottom: 1.2rem; }
+
+.service-link { font-size: .82rem; color: #c9a84c; text-decoration: none; letter-spacing: .1em; font-family: 'Segoe UI', sans-serif; }
+.service-link:hover { color: #e8c96a; }
+  
+/*navigation bar*/
+.nav{
+  position: fixed;
+  width: 100px;
+  z-index: index 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 60px;
+  background-color: rgba(10, 10, 10, 0.95);
+  border-bottom: 1px solid #2a2a2a;
+}
+.nav-logo{
+  font-family:'playfair display',serif;
+  font-size: 22px;
+  font-weight: 700px;
+  color:#fdeef0 ;
+}
+.nav-logo span {
+  color: #B8860B; }
+
+  .nav-links {
+  display: flex;
+  gap: 36px;
+}
+  nav-links a {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #5a5a5a;
+}
+
+.nav-links a:hover {
+  color: #996F00;
+}
+
+.nav-cta {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  background-color: #B8860B;
+  color: #1a1a1a;
+  padding: 10px 22px;
+}
+
+.nav-cta:hover {
+  background-color: #996F00;
+}
+
+/*BUTTON */
+.btn-primary {
+  display: flow-root;
+  padding: 14px 32px;
+  background-color: #B8860B;
+  color: #1a1a1a;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #996F00;
+}
+
+.btn-outline {
+  display: inline-block;
+  padding: 14px 32px;
+  border: 1px solid #996F00;
+  color: #B8860B;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.btn-outline:hover {
+  background-color: #996F00;
+  color: #1a1a1a;
+}
+
+/* HERO SECTION */
+#hero {
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 160px 60px 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at 70% 50%, transparent 60%);
+  pointer-events: none;
+}
+
+.hero-grid {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image:
+    linear-gradient(rgba(184, 134, 11, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(184, 134, 11, 0.06) 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+
+.hero-eyebrow {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #B8860B;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 72px;
+  font-weight: 400;
+  line-height: 1.1;
+  color: #fdeef0;
+  max-width: 600px;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-title em {
+  display: block;
+  font-style: italic;
+  color: #B8860B;
+}
+
+.hero-sub {
+  font-size: 16px;
+  color: #7a7a7a;
+  max-width: 520px;
+  margin-bottom: 36px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-action {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 60px;
+  position: relative;
+  z-index: 2;
+}
+
+.stat-num {
+  display: inline-block;
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: #e0e0e0;
+  margin-right: 6px;
+}
+
+.stat-label {
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #5a5a5a;
+  margin-right: 40px;
+  vertical-align: middle; }
+
+    
+    </style> 
+  
 </head>
 <body>
-    
-    <!--NAVIGATION-->
-    <!-- <nav>
-        <div class="logo">MY PROFILE</div>
-        <button class="nav-btn" onclick="scrollTo('#DEBZ')">SEE ME</button>
-    </nav>-->
-    <nav>
-    
-    
-<br>
-<br>
-    <div>
-        <!--divclass= "navbar">
-            <div class="nav-container">
-                <div class="logo">
-                     MY PROFILE
-                </div-->
-        <div class="nav-link">
-        <a href="index.html">HOME</a>
-        <a href="educ.html">EDUCATION</a>
-        <a href="hob.html">HOBBIES</a>
-        <a href="Contac.html">CONTACT ME</a>
-                                            <!--a href="https://facebook.com"target="_blank">facebook</a>
-                                        <a href="https://Istagram.com"target="_blank">istagram</a>
-                                   <a href="https://linkedin.com"target=_"blank">Lindedin</a>
-                              <a href="https://Wechat.com"target=_"blank">wechat</a>
-                          <a href="https://twitter.com"target="_blank" >twitter</a--!>
+<nav>
+  <a href="#" class="nav-logo"><span>DOXA EVENTS</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">SERVICES</a></li>
+    <li><a href="Showcase.html">PROTOFOLIO</a></li>
+    <li><a href="dashboard.html">DASHBOARD</a></li>
+    <li><a href="bookings.html">BOOKING</a></li>
+        <li> <a href="contact.html">CONTACT</a></li>
+    </a></li>
+  </ul>
+  <a href="#booking" class="nav-cta">Get a Quote</a>
+</nav>
 
-    </div>
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <p class="hero-eyebrow"> Premium event Planning</p>
+  <h1 class="hero-title">
+    We craft moments
+    <em>Worth remembering</em>
+</h1>
 
+<p class="hero-sub">From intimate gatherings to grand galas, Doxa Events transforms your vision into extraordinary experiences that leave lasting impressions. </p>
+<div class="hero-action">
 
-<!--a href="profile.html">HOME</a>
-<a href="educ.html">EDUCATION</a>
-<a href="hob.html">HOBBIES</a>
-<a href="Contac.html">CONTACT ME</a--->
-    </nav>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-      <h1>My Profile </h1>
-    <br>
-    <br>
-  <img class="image" src="images/zzzzzzz.jpeg" alt="">
-  <hr>
-         <br>
-   <p>
-        Hello,
-        <br>
-        <br>
-        My names are DEBORAH ACIRO. <br>
-        I'm a driven and multidisciplinary student currently pursuing a degree in Procurement and Logistics at Victoria University, Uganda, <br>
-        while simultaneously advancing my technical skill set through a Software Development programme at Refactory, Nakawa Institute of ICT.
-     <br>
- <br>
+    <a href="bookings.html" class="btn-primary">Start Planning</a>
 
-        My academic journey reflects a rare and deliberate combination — bridging the worlds of supply chain management and technology. <br>
-        At Victoria University, Deborah has built a strong foundation in procurement principles, logistics operations, supplier management, <br>
-        and the strategic frameworks that drive efficient organisational performance. <br>
-        My coursework has equipped her with both the theoretical knowledge and practical insight needed to thrive in modern procurement
-        
-   <br>
- <br>
+    <a href="Showcase.html"class="btn-outline">view Portfolio</a>
+</div>
 
-        In parallel, my enrolment at Refactory demonstrates a forward-thinking mindset. <br>
-        Recognising that the future of logistics and supply chain is increasingly digital, have taken the initiative to develop hands-on programming and software development skills — <br>
-        positioning myself at the intersection of technology and operations, a space that is rapidly transforming industries across Africa and beyond.
-        <br>
-        <br>
+<div class="stat-num"> 120+</div> <div class="stat-label"> Events Executed</div>
+<div class="stat-num">60+</div> <div class="stat-label">Client Satisfaction</div>
+<div class="stat-num">2</div> <div class="stat-label"> Years of Excellence</div>
+</section>
 
-        I'm passionate about leveraging technology to solve real-world supply chain challenges — from automating procurement processes to developing data-driven logistics solutions. <br>
-        I'm self-motivated learner, a committed team player, and someone who consistently pursues excellence across every academic and professional endeavour she undertakes.
-        <br>
-        <br>
+<!--section-->
+<section id="services">
+  <div class="services-header reveal">
+    <p class="section-tag"> WHAT WE DO</p>
+    <h2 class="section-title">Every Detail</h2> <br><em> Perfectly Orchestrated</em>
+    <div class="divider"></div>
 
-        As I approaches the next chapter of my career, <br>
-        I'm eager to connect with professionals, organisations, and opportunities that value innovation, operational efficiency, and the power of digital transformation in supply chain management.
-        <hr>
-<br>
-<br>
-<br>
+</div>
+<div class="services-grid reveal">
+  <div class="service-card onclick"="document.getElementById('booking').scrollIntoView({behavior:smooth})">
+  <span class="service-icon"></span>
+  <h3 class="service-name">Weddings and Ceremonies</h3>
+  <p class="service-desc">From intimate elopements to extravagant celebrations, we curate every element of your most important day with meticulous triats.</p>
+  <a class="service-link" href="#booking">Enquiry now →</a>
+</div>
+                                                            <div class="service-card onclick"="document.getElementById('booking').scrollIntoView({behavior:smooth})"></div>
+                                                           <span class="service-icon"></span>
+                                                          <h3 class="service-name"> Corporate Galas</h3>
+                                                       <p class="service-desc">Elevate your brand with sophisticated corporate events — from product launches to annual awards ceremonies that impress and inspire.</p>
+                                                    <a class="service-link" href="#booking">Enquiry now →</a> </div>
+
+                                              <div class="service-card onclick"="document.getElementById('booking').scrollIntoView({behavior:smooth})"></div>
+                                               <span class="service-icon"></span>
+                                               <h3 class="service-name">Private Celebrations</h3>
+                                               <p class="service-desc">Milestone birthdays, anniversary dinners, and exclusive soirées crafted to reflect your personal style and create unforgettable memories.</p>
+                                             <a class="service-link" href="#bookings">Enquiry now →</a>
 
 
-         <!--h1>EDUCATIONAL BACKGROUND</h1>
-         <br>
+                                        <div class="service-card onclick"="document.getElementById('bookin').scrollIntoView({behavior:smooth})">      
+                                       <span class="service-icon"></span>
+                                    <h3 class="service-name">Festivals & Exhibitions</h3>
+                                   <p class="service-desc">Large-scale multi-day events, cultural festivals, art exhibitions, and immersive brand experiences that captivate thousands.</p>
+                                <a class="service-link" href="#booking">Enquiry now →</a> </div>
+</div>
 
-    <table border="1">
-
-        <tr>
-            <th>YEAR</th>
-            
-            <th>INSTITUTION</th>
-            
-            <th>AWARD</th>
-        </tr>
-        <tr>
-            <td>2026 to date</td>
-            
-            <td>Victoria University</td>
-            
-            <td> Bacholar degree in Procurement and Logistics</td>
-        </tr>
-        <tr>
-            <td>2023-2025</td>
-            
-            <td>Victoria University</td>
-            
-            <td>Post Graduate Diploma in Tourism and Hospitality</td>
-
-        </tr>
-
-    </table>
-    <hr>
-    <br>
-    
+</section>
 
 
-
-<h1> Key Interests</h1>
-
-<ol>
-    <li>Supply Chain Digitalisation</li>
-    <li>Procurement Automation</li>
-    <li>Logistics Technology & Innovation</li>
-    <li>Software Development for Business Solutions</li>
-</ol>
-
-<hr>
-<br>D
-<br>
-
-<h1> HOBBIES</h1>
-
-    <ol>
-        <li>Watching movies</li>
-        <li>Playing Games</li>
-        <li>Coding</li>
-        <li>Adventuring</li>
-        <li>Singing</li>
-        <li>Learning new skills</li>
-        <li>Meeting new friends</li>
-
-    </ol>
-
-    <hr>
-    <br>
-    <br>
-
-    <h1>Contact Me</h1>
-    <br>
-    <h2><i>Name <i></h2>
-    <input class="name"type="text" placeholder="DEBORAH ACIRO" required>
-    <br>
-    <br>
-    <h2><i>Emil Address</i></h2>
-<input class="email" type="text" Placeholder="debbiedebrah43@gmail.com" required>
-<br>
-<br>
-<h2><i>Message</i></h2>
-<input class="Message"type="text">
-
-<br>
-<br>
-<button type="submit"class="submit-btn">Send</button>
-<br>
-<br>
-<h3>My Social Media Links</h3>
-
-<br>
-<br>
-<footer>&copy;2026 Deborah Aciro. All Rights Reserved</footer>
+<!link rel="stylesheet" href="explore my services" target=_blank >
 
 
 
 
-
-
-
-    
-
-    </p>
-
-
-</body>
-</html>
-<div>
-        <!--divclass= "navbar">
-            <div class="nav-container">
-                <div class="logo"">
-                     MY PERSONAL PROFILE
-                </div>
-        <div class="nav-link">
-        <a href="#profile.html">HOME</a>
-        <a href="#educ.html">EDUCATION</a>
-        <a href="#hob.html">HOBBIES</a>
-        <a href="#Contac.html">CONTACT ME</a>
-
-
-    </div>
     
 </body>
 </html>

@@ -1,0 +1,1182 @@
+ /*============================================
+   DOXA EVENTS - Main Stylesheet
+   This file styles all pages:
+   doxa.html, dashboard.html, bookings.html,
+   Showcase.html, contact.html
+   
+   HOW TO USE:
+   Add this line inside <head> on every HTML page:
+   <link rel="stylesheet" href="doxa.css">
+===================================================== */
+
+
+/* =====================================================
+   GOOGLE FONTS
+   We import two fonts from Google Fonts:
+   - Playfair Display: used for big headings
+   - Poppins: used for normal body text
+================================================
+
+
+/* =====================================================
+   GENERAL RESET
+   Removes default spacing that browsers add.
+   box-sizing makes width calculations easier.
+===================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* =====================================================
+   BODY (the whole page)
+   Sets the background color, font, and text color
+   for everything on the page.
+===================================================== */
+body {
+  background-color: #0d0d0b;   /* very dark background */
+  color: #e0dbd0;               /* light cream text */
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  line-height: 1.7;             /* space between lines of text */
+}
+
+
+/* =====================================================
+   LINKS
+   Removes the default underline from all links
+   and makes them inherit the parent text color.
+===================================================== */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* =====================================================
+   LISTS
+   Removes bullet points from all lists.
+===================================================== */
+ul {
+  list-style: none;
+}
+
+/* =====================================================
+   IMAGES
+   Makes images responsive (they won't overflow).
+===================================================== */
+img {
+  max-width: 100%;
+  display: #d2df60; ;
+}
+
+
+/* =====================================================
+   NAVIGATION BAR
+   The top menu bar that appears on every page.
+   It sticks to the top as you scroll.
+===================================================== */
+nav {
+  position: fixed;          /* stays at the top when scrolling */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;             /* sits on top of everything else */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 60px;
+  background-color: rgba(dark); /* slightly see-through dark bg */
+  border-bottom: 1px solid rgba(212, 175, 96, 0.20);
+}
+
+/* The DOXA logo text on the left */
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #f5f0e8;
+}
+
+/* The word "DOXA" gets a gold color */
+.nav-logo span {
+  color: #d4af60;
+}
+
+/* The list of navigation links in the middle */
+.nav-links {
+  display: flex;
+  gap: 36px;          /* space between each link */
+}
+
+/* Individual nav links */
+.nav-links a {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #9a9488;
+}
+
+/* Nav links on hover - they turn gold */
+.nav-links a:hover {
+  color: #d4af60;
+}
+
+/* The "Get a Quote" button on the right */
+.nav-cta {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  background-color: #d4af60;
+  color: #0d0d0b;
+  padding: 10px 22px;
+}
+
+.nav-cta:hover {
+  background-color: #e8cc88;
+}
+
+
+/* =====================================================
+   BUTTONS
+   Two button styles used across the site.
+   .btn-primary = solid gold button
+   .btn-outline = transparent with gold border
+===================================================== */
+.btn-primary {
+  display: inline-block;
+  padding: 14px 32px;
+  background-color: #d4af60;
+  color: #0d0d0b;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #e8cc88;
+}
+
+.btn-outline {
+  display: inline-block;
+  padding: 14px 32px;
+  border: 1px solid #d4af60;
+  color: #d4af60;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.btn-outline:hover {
+  background-color: #d4af60;
+  color: #0d0d0b;
+}
+
+
+/* =====================================================
+   REUSABLE TEXT STYLES
+   Classes used on headings and labels throughout
+   the whole site.
+===================================================== */
+
+/* Small label that appears above headings e.g. "WHAT WE DO" */
+.section-tag {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #d4af60;
+  margin-bottom: 12px;
+}
+
+/* Large section heading */
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: #f5f0e8;
+}
+
+/* The italic part inside a section title turns gold */
+.section-title em {
+  font-style: italic;
+  color: #d4af60;
+}
+
+/* A short gold horizontal line used as a divider */
+.divider {
+  width: 48px;
+  height: 2px;
+  background-color: #d4af60;
+  margin: 20px 0;
+}
+
+
+/* =====================================================
+   HERO SECTION  (doxa.html)
+   The big full-screen area at the top of the page.
+===================================================== */
+#hero {
+  min-height: 100vh;        /* fills the whole screen height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 160px 60px 80px 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background glow effect behind the hero content */
+hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at 70% 50%, rgba(212, 175, 96, 0.07) 0%, transparent 60%);
+  pointer-events: none;    /* so it doesn't block clicks */
+}
+
+/* The faint grid of lines in the background */
+hero-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    linear-gradient(rgba(212, 175, 96, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212, 175, 96, 0.07) 1px, transparent 1px);
+  background-size: 80px 80px;
+  pointer-events: none;
+}
+
+/* Small label above the main title e.g. "Premium Event Planning" */
+hero-eyebrow {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #d4af60;
+  margin-bottom: 20px;
+  position: relative;       /* so it sits above the background */
+  z-index: 2;
+}
+
+/* The big main title */
+hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 72px;
+  font-weight: 400;
+  line-height: 1.1;
+  color: #f5f0e8;
+  max-width: 600px;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 2;
+}
+
+/* The italic line inside the hero title */
+hero-title em {
+  display: block;
+  font-style: italic;
+  color: #d4af60;
+}
+
+/* The paragraph of text below the title */
+hero-sub {
+  font-size: 16px;
+  color: #9a9488;
+  max-width: 520px;
+  margin-bottom: 36px;
+  position: relative;
+  z-index: 2;
+}
+
+/* The container holding both buttons */
+hero-action {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 60px;
+  position: relative;
+  z-index: 2;
+}
+
+/* The big numbers in the hero stats e.g. "120+" */
+stat-num {
+  display: inline-block;
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: #d4af60;
+  margin-right: 6px;
+}
+
+/* The text next to the stat number e.g. "Events Executed" */
+stat-label {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #9a9488;
+  margin-right: 40px;
+  vertical-align: middle;
+}
+
+
+/* =====================================================
+   SERVICES SECTION  (doxa.html)
+   The four service cards below the hero.
+===================================================== */
+#services {
+  padding: 100px 60px;
+}
+
+/* The heading area above the cards */
+services-header {
+  max-width: 500px;
+  margin-bottom: 50px;
+}
+
+/* The row of service cards */
+services-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  background-color: rgba(212, 175, 96, 0.15); /* shows between cards as border lines */
+}
+
+/* Each individual service card */
+service-card {
+  background-color: #111110;
+  padding: 40px 32px;
+  flex: 1 1 220px;       /* cards grow and shrink, minimum 220px wide */
+  cursor: pointer;
+}
+
+service-card:hover {
+  background-color: #181816;
+}
+
+/* The emoji icon at the top of each card */
+service-icon {
+  display: block;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+/* Service card title */
+service-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: #f5f0e8;
+  margin-bottom: 12px;
+}
+
+/* Service card description text */
+service-desc {
+  font-size: 14px;
+  color: #9a9488;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+/* "Enquire now" link at the bottom of each card */
+service-link {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #d4af60;
+}
+
+service-link:hover {
+  color: #e8cc88;
+}
+
+
+/* =====================================================
+   SHOWCASE / PORTFOLIO SECTION  (Showcase.html)
+   A grid of past event photos/cards.
+===================================================== */
+#showcase {
+  padding: 100px 60px;
+  background-color: #111110;
+}
+
+/* The top row with the heading and "View All" button */
+.showcase-intro {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+/* The grid of event cards */
+.showcase-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  background-color: rgba(212, 175, 96, 0.15);
+}
+
+/* Each event card in the portfolio */
+event-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 260px;
+  flex: 1 1 280px;      /* grows and shrinks, min 280px wide */
+  cursor: pointer;
+}
+
+/* The background image or color of each card */
+event-card-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.5s ease;   /* smooth zoom on hover */
+}
+
+/* Zoom in slightly when hovering a card */
+event-card:hover .event-card-bg {
+  transform: scale(1.06);
+}
+
+/* Dark gradient so text is readable over the image */
+event-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(10, 10, 8, 0.85) 0%, transparent 60%);
+}
+
+/* Text content at the bottom of each card */
+event-card-body {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 24px 22px;
+  z-index: 2;           /* sits above the gradient overlay */
+}
+
+/* Small label e.g. "Wedding 2024" */
+event-tag {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #d4af60;
+  margin-bottom: 6px;
+}
+
+/* Event name e.g. "Impala Estate Ceremony" */
+event-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: #f5f0e8;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+/* Location and guest count */
+event-meta {
+  display: flex;
+  gap: 16px;
+  font-size: 12px;
+  color: #9a9488;
+}
+
+/* Placeholder background colors for cards without real images */
+.ev1 .event-card-bg { background-color: #2a1f0e; }
+.ev2 .event-card-bg { background-color: #0e1f2a; }
+.ev3 .event-card-bg { background-color: #200a2a; }
+.ev4 .event-card-bg { background-color: #0a2010; }
+.ev5 .event-card-bg { background-color: #2a1510; }
+
+/* Make the first card bigger */
+.ev1 { flex: 2 1 400px; }
+
+
+/* =====================================================
+   DASHBOARD SECTION  (dashboard.html)
+   Shows stats, upcoming events, and activity.
+===================================================== */
+#dashboard {
+  padding: 100px 60px;
+}
+
+/* Top row with heading and "Updated" date */
+dash-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+/* Small "Updated: May 2026" text */
+dash-meta {
+  font-size: 12px;
+  color: #9a9488;
+  letter-spacing: 1px;
+}
+
+/* Row of four stat boxes */
+dash-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  background-color: rgba(212, 175, 96, 0.15);
+  margin-bottom: 2px;
+}
+
+/* Each stat box */
+dash-stat {
+  background-color: #111110;
+  padding: 32px 28px;
+  flex: 1 1 180px;
+  border-top: 2px solid #d4af60;  /* gold line on top */
+}
+
+/* The big number in each stat box */
+stat-value {
+  font-family: 'Playfair Display', serif;
+  font-size: 44px;
+  font-weight: 400;
+  color: #f5f0e8;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+/* Smaller text inside the stat value e.g. " active" */
+stat-value span {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: #9a9488;
+}
+
+/* The small change indicator e.g. "up 4 from last month" */
+stat-change {
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 8px;
+}
+
+/* Green = good / going up */
+stat-change.up {
+  color: #4caf7d;
+}
+
+/* Red = going down */
+.stat-change.down {
+  color: #e05c5c;
+}
+
+/* The two panels side by side (events list + timeline) */
+dash-main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  background-color: rgba(212, 175, 96, 0.15);
+}
+
+/* Each panel */
+panel {
+  background-color: #161614;
+  flex: 1 1 340px;
+}
+
+/* Top bar of each panel with title and action link */
+panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 28px;
+  border-bottom: 1px solid rgba(212, 175, 96, 0.15);
+}
+
+/* Panel title text e.g. "Upcoming Events" */
+panel-title {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #9a9488;
+}
+
+/* "View all" or "+ Add Event" link */
+panel-action {
+  font-size: 12px;
+  color: #d4af60;
+}
+
+panel-action:hover {
+  color: #e8cc88;
+}
+
+/* Inside the panel */
+.panel-body {
+  padding: 8px 0;
+}
+
+/* Each row in the events list */
+event-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 28px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+event-row:last-child {
+  border-bottom: none;
+}
+
+event-row:hover {
+  background-color: rgba(212, 175, 96, 0.03);
+}
+
+/* The emoji icon on the left of each event row */
+event-dot {
+  font-size: 18px;
+  flex-shrink: 0;   /* won't shrink even if space is tight */
+}
+
+/* Event name and date container */
+event-info {
+  flex: 1;
+  min-width: 0;     /* allows text to truncate properly */
+}
+
+/* Event name text */
+event-row-name {
+  font-size: 14px;
+  color: #e0dbd0;
+  margin-bottom: 3px;
+  /* The next 3 lines cut off long text with "..." */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Date and location below the event name */
+event-row-date {
+  font-size: 12px;
+  color: #9a9488;
+}
+
+/* Colored status badge on the right e.g. "Confirmed" */
+event-badge {
+  flex-shrink: 0;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+}
+
+/* Badge color variations */
+badge-confirmed {
+  background-color: rgba(76, 175, 125, 0.15);
+  color: #4caf7d;
+}
+
+badge-planning {
+  background-color: rgba(212, 175, 96, 0.15);
+  color: #d4af60;
+}
+
+badge-draft {
+  background-color: rgba(91, 155, 213, 0.15);
+  color: #5b9bd5;
+}
+
+badge-pending {
+  background-color: rgba(224, 92, 92, 0.15);
+  color: #e05c5c;
+}
+
+
+/* =====================================================
+   ACTIVITY TIMELINE  (inside dashboard.html)
+   A vertical list of recent activity.
+===================================================== */
+timeline {
+  padding: 12px 0;
+}
+
+/* Each item in the timeline */
+tl-item {
+  display: flex;
+  gap: 14px;
+  padding: 0 28px;
+}
+
+/* The left column: dot + vertical line */
+tl-spine {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  padding-top: 4px;
+}
+
+/* The colored circle dot */
+.tl-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;   /* makes it a circle */
+  flex-shrink: 0;
+}
+
+/* Different dot colors */
+.tl-dot.gold  { background-color: #d4af60; }
+.tl-dot.green { background-color: #4caf7d; }
+.tl-dot.blue  { background-color: #5b9bd5; }
+.tl-dot.muted { background-color: #9a9488; }
+
+/* The vertical connecting line between dots */
+.tl-line {
+  flex: 1;
+  width: 1px;
+  background-color: rgba(212, 175, 96, 0.15);
+  margin: 4px 0;
+  min-height: 24px;
+}
+
+/* The text on the right side of each timeline item */
+.tl-content {
+  padding-bottom: 20px;
+}
+
+/* Activity description */
+.tl-title {
+  font-size: 14px;
+  color: #e0dbd0;
+  margin-bottom: 4px;
+}
+
+/* Time/date of the activity */
+.tl-date {
+  font-size: 11px;
+  color: #9a9488;
+}
+
+
+/* =====================================================
+   BOOKING FORM SECTION  (bookings.html)
+   The event enquiry form.
+===================================================== */
+#booking {
+  padding: 100px 60px;
+  background-color: #111110;
+}
+
+/* Two-column layout: info on left, form on right */
+.booking-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+/* Left side info column */
+.booking-info {
+  flex: 1 1 300px;
+}
+
+/* The three feature bullet points */
+.booking-features {
+  margin-top: 36px;
+}
+
+/* Each feature item */
+.booking-feature {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+/* The gold dot bullet */
+.feature-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #d4af60;
+  flex-shrink: 0;
+  margin-top: 8px;
+}
+
+/* The text next to the bullet */
+.feature-text {
+  font-size: 14px;
+  color: #9a9488;
+  line-height: 1.6;
+}
+
+/* The bold title inside feature text */
+.feature-text strong {
+  display: block;
+  color: #e0dbd0;
+  margin-bottom: 4px;
+}
+
+/* Right side form column */
+.booking-form {
+  flex: 1 1 380px;
+}
+
+/* The form itself - stacks fields vertically */
+.booking-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Two fields side by side in one row */
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* A single field container (label + input) */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1 1 160px;     /* grows to fill space, min 160px wide */
+}
+
+/* Labels above inputs */
+.field label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #9a9488;
+}
+
+/* Text inputs, dropdowns, and text areas */
+.field input,
+.field select,
+.field textarea {
+  background-color: #161614;
+  border: 1px solid rgba(212, 175, 96, 0.20);
+  padding: 12px 16px;
+  font-size: 14px;
+  color: #e0dbd0;
+  outline: none;        /* removes the default blue outline */
+  width: 100%;
+}
+
+/* Placeholder text inside inputs */
+.field input::placeholder,
+.field textarea::placeholder {
+  color: rgba(154, 148, 136, 0.5);
+}
+
+/* Gold border when clicking into a field */
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: #d4af60;
+}
+
+/* Dropdown select styling */
+.field select {
+  cursor: pointer;
+  appearance: none;   /* removes default browser arrow */
+}
+
+/* Text area (the big message box) */
+.field textarea {
+  min-height: 120px;
+  resize: vertical;   /* can only be resized up and down */
+  line-height: 1.6;
+}
+
+/* Guest counter (+/- buttons) */
+.guest-counter {
+  display: flex;
+  align-items: center;
+  border: 1px solid rgba(212, 175, 96, 0.20);
+  background-color: #161614;
+  width: fit-content;
+}
+
+/* The + and - buttons */
+.guest-btn {
+  width: 44px;
+  height: 44px;
+  background-color: transparent;
+  border: none;
+  color: #d4af60;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.guest-btn:hover {
+  background-color: rgba(212, 175, 96, 0.10);
+}
+
+/* The number in between the buttons */
+#guest-count {
+  padding: 0 24px;
+  font-size: 16px;
+  color: #f5f0e8;
+  min-width: 60px;
+  text-align: center;
+  border-left: 1px solid rgba(212, 175, 96, 0.20);
+  border-right: 1px solid rgba(212, 175, 96, 0.20);
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Grid of service checkboxes */
+.services-select {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Each checkbox + label */
+.service-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  color: #9a9488;
+  padding: 8px 12px;
+  border: 1px solid transparent;
+}
+
+.service-check:hover {
+  border-color: rgba(212, 175, 96, 0.20);
+  color: #e0dbd0;
+}
+
+/* The checkbox input itself */
+.service-check input[type="checkbox"] {
+  width: 14px;
+  height: 14px;
+  accent-color: #d4af60;   /* makes the checkmark gold when checked */
+  cursor: pointer;
+}
+
+/* The big submit button */
+.form-submit {
+  width: 100%;
+  padding: 16px;
+  background-color: #d4af60;
+  border: none;
+  color: #0d0d0b;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.form-submit:hover {
+  background-color: #e8cc88;
+}
+
+/* Success message (hidden by default, shown after form submit) */
+.form-success {
+  display: none;
+  text-align: center;
+  padding: 60px 32px;
+}
+
+/* Show it when JavaScript adds the "visible" class */
+.form-success.visible {
+  display: block;
+}
+
+.success-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.success-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 34px;
+  color: #f5f0e8;
+  margin-bottom: 12px;
+}
+
+.success-sub {
+  font-size: 15px;
+  color: #9a9488;
+}
+
+
+/* =====================================================
+   CONTACT PAGE  (contact.html)
+   Simple page with social media links.
+===================================================== */
+.contact-page {
+  padding: 140px 60px 80px;
+}
+
+/* "Reach out" heading */
+.contact-page h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  font-weight: 400;
+  color: #f5f0e8;
+  margin-bottom: 40px;
+}
+
+/* The row of social media links */
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* Each social media button */
+.social-links a {
+  display: inline-block;
+  padding: 12px 24px;
+  border: 1px solid rgba(212, 175, 96, 0.25);
+  color: #9a9488;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background-color: #111110;
+}
+
+.social-links a:hover {
+  border-color: #d4af60;
+  color: #d4af60;
+}
+
+
+/* =====================================================
+   SCROLL REVEAL ANIMATION
+   Elements with class "reveal" start invisible and
+   slide up into view. JavaScript adds "visible"
+   when they scroll into the screen.
+===================================================== */
+.reveal {
+  opacity: 0;                        /* start invisible */
+  transform: translateY(30px);       /* start 30px lower */
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;                        /* fully visible */
+  transform: translateY(0);          /* back to normal position */
+}
+
+
+/* =====================================================
+   RESPONSIVE DESIGN
+   Makes the layout work on smaller screens like
+   tablets and phones.
+===================================================== */
+
+/* Tablet (screen width 768px or less) */
+@media (max-width: 768px) {
+
+  /* Hide nav links on small screens */
+  .nav-links {
+    display: none;
+  }
+
+  /* Reduce nav padding */
+  nav {
+    padding: 16px 24px;
+  }
+
+  /* Reduce section padding */
+  #hero,
+  #services,
+  #showcase,
+  #dashboard,
+  #booking {
+    padding: 80px 24px;
+  }
+
+  .hero-title {
+    font-size: 44px;
+  }
+
+  .section-title {
+    font-size: 32px;
+  }
+
+  /* Stack booking layout vertically */
+  .booking-layout {
+    flex-direction: column;
+  }
+
+  /* Stack form rows vertically */
+  .form-row {
+    flex-direction: column;
+  }
+}
+
+/* Mobile phone (screen width 480px or less) */
+@media (max-width: 480px) {
+
+  /* Hide the "Get a Quote" button on very small screens */
+  .nav-cta {
+    display: none;
+  }
+
+  nav {
+    padding: 14px 16px;
+  }
+
+  #hero,
+  #services,
+  #showcase,
+  #dashboard,
+  #booking {
+    padding: 80px 16px 40px;
+  }
+
+  .hero-title {
+    font-size: 36px;
+  }
+
+  .hero-action {
+    flex-direction: column;
+  }
+
+  .dash-grid {
+    flex-direction: column;
+  }
+}
